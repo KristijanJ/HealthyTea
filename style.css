@@ -3,10 +3,10 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  box-sizing: border-box;
   font-family: "Karla", sans-serif;
 }
 
@@ -32,6 +32,60 @@ a {
   color: #c6c00f;
 }
 
+#header {
+  z-index: 5;
+  color: #c6c00f;
+}
+
+#header > * {
+  z-index: 5;
+}
+
+#hamburger {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 6;
+  cursor: pointer;
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  left: -200px;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 200px;
+  padding: 4rem 1rem 1rem 1rem;
+  transition: 200ms;
+}
+
+.nav.open {
+  left: 0px;
+}
+
+.nav li {
+  padding: 1rem 0;
+}
+
+.nav li a {
+  color: #fff;
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  color: #fff;
+}
+
+.search {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
 #landing {
   width: 100%;
   height: 100vh;
@@ -53,62 +107,8 @@ a {
   box-shadow: inset 120px 100px 250px #000, inset -120px -100px 250px #000;
 }
 
-#header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  padding-top: 1rem;
-  position: relative;
-  z-index: 2;
-  color: #fff;
-  /* height: 12vh; */
-}
-
-.hamburger {
+#hamburger {
   transition: 200ms;
-}
-
-.line {
-  width: 2rem;
-  height: 2px;
-  background: #c6c00f;
-  margin-bottom: 5px;
-  transition: 200ms;
-}
-
-.search {
-  color: #c6c00f;
-}
-
-.nav {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  background: rgba(0, 0, 0, 0.7);
-  height: 100vh;
-  width: 200px;
-  transition: 200ms;
-  z-index: 3;
-}
-
-.active {
-  display: flex;
-  transition: 200ms;
-}
-
-.nav li {
-  padding-top: 2rem;
-  z-index: 4;
-}
-
-.nav a {
-  color: #fff;
-}
-
-.logo {
-  text-transform: uppercase;
 }
 
 .landing-content {
@@ -117,14 +117,14 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  height: 100%;
   position: relative;
   z-index: 2;
 }
 
 .landing-content h1 {
   font-size: 4.6rem;
-  margin: 4rem auto;
+  margin: 1rem auto;
 }
 
 .landing-content a {
@@ -202,10 +202,7 @@ a {
 /* MENU */
 
 #menu {
-  background: url(img/menu-bg.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background: #f9f8f6;
   width: 100%;
   padding-top: 2rem;
   padding-bottom: 4rem;
@@ -229,13 +226,14 @@ a {
 
 .menu-item {
   display: flex;
+  justify-content: center;
 }
 
 .menu-item-details {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 100%;
+  justify-content: stretch;
+  flex: 1;
 }
 
 .menu-item-details > div {
@@ -254,84 +252,14 @@ a {
 
 /* MENU ITEM IMAGES */
 
-#menu1-item-image {
-  width: 115px;
-  height: 100px;
-  background: url(img/menu-items/tea1.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 100%;
+.menu-item-image {
+  width: 100px;
 }
 
-#menu2-item-image {
-  width: 115px;
-  height: 100px;
-  background: url(img/menu-items/tea2.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 100%;
-}
-
-#menu3-item-image {
-  width: 115px;
-  height: 100px;
-  background: url(img/menu-items/tea3.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 100%;
-}
-
-#menu4-item-image {
-  width: 115px;
-  height: 100px;
-  background: url(img/menu-items/tea4.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 100%;
-}
-
-#menu5-item-image {
-  width: 115px;
-  height: 100px;
-  background: url(img/menu-items/tea5.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 100%;
-}
-
-#menu6-item-image {
-  width: 115px;
-  height: 100px;
-  background: url(img/menu-items/tea6.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 100%;
-}
-
-#menu7-item-image {
-  width: 115px;
-  height: 100px;
-  background: url(img/menu-items/tea7.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 100%;
-}
-
-#menu8-item-image {
-  width: 115px;
-  height: 100px;
-  background: url(img/menu-items/tea8.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 100%;
+.menu-item-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 
 /* NEWS */
@@ -645,6 +573,10 @@ form button:focus {
 }
 
 @media (max-width: 700px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+
   #newsletter h1 {
     font-size: 1.5rem;
     width: 400px;
